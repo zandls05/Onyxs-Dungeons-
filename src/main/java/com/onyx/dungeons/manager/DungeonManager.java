@@ -236,7 +236,7 @@ public class DungeonManager {
 
     public void startTask() {
         stopTask();
-        task = Bukkit.getScheduler().runTaskTimer(plugin, this::tick, 20L, 10L);
+        task = Bukkit.getScheduler().runTaskTimer(plugin, () -> tick(), 20L, 10L);
     }
 
     public void stopTask() {
