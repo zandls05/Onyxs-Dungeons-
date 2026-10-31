@@ -1,0 +1,93 @@
+# ============================================================
+#  Onyx Dungeons - configuracion
+#  Los mensajes estan en messages.yml (tambien editables desde /dungeon > Mensajes)
+# ============================================================
+
+hologram:
+  # AUTO usa DecentHolograms o HolographicDisplays si estan instalados; si no, hologramas propios.
+  # Valores: AUTO | INTERNAL | DECENTHOLOGRAMS | HOLOGRAPHICDISPLAYS
+  provider: AUTO
+
+dungeon:
+  # Valores por defecto al crear una dungeon nueva (luego se editan desde el menu)
+  default-min-players: 1
+  default-max-players: 5
+  default-countdown: 30
+  # Si baja de la cantidad minima durante la cuenta atras, se cancela
+  cancel-countdown-if-below-min: true
+  # Ultimos N segundos en los que se envia el mensaje 'countdown-tick'
+  countdown-tick-seconds: 5
+  # Modo de juego forzado dentro de la dungeon (NONE para no tocarlo)
+  force-gamemode: SURVIVAL
+  restore-gamemode-on-exit: true
+  # Segundos entre completar la dungeon y volver al lobby
+  end-delay-seconds: 10
+  # 0 = sin limite
+  time-limit-minutes: 0
+  # Conservar inventario al morir dentro de la dungeon
+  keep-inventory-on-death: false
+  # Impide romper/colocar bloques dentro de la region del mapa
+  protect-blocks: true
+
+keys:
+  # ALL = todos los jugadores vivos reciben la llave | KILLER = solo quien mato al jefe | DROP = cae al suelo
+  give-mode: ALL
+  consume-on-open: true
+
+chests:
+  # true = cada jugador ve su propio loot al abrir el cofre (inventario virtual)
+  personal-loot: false
+
+boss-bar:
+  enabled: true
+
+restrictions:
+  block-fly: true
+  # Impide entrar al mapa por tp/comandos si no se entra por la plataforma
+  block-entry-without-session: true
+  # BLACKLIST: bloquea los comandos de 'blocked-commands' | WHITELIST: solo permite 'allowed-commands'
+  command-mode: BLACKLIST
+  blocked-commands:
+    - tp
+    - tpa
+    - tpahere
+    - tpaccept
+    - tpyes
+    - tpdeny
+    - tpall
+    - tphere
+    - tppos
+    - tpr
+    - teleport
+    - back
+    - dback
+    - home
+    - homes
+    - sethome
+    - warp
+    - warps
+    - spawn
+    - hub
+    - lobby
+    - rtp
+    - wild
+    - fly
+    - gamemode
+    - gm
+    - gmc
+    - gms
+  allowed-commands:
+    - msg
+    - tell
+    - r
+  # Comandos que siempre funcionan aunque esten en la lista negra
+  always-allowed-commands:
+    - dungeon
+    - dungeons
+    - onyxdungeons
+    - od
+  # Causas de teletransporte que se bloquean dentro de la dungeon (las perlas de ender siguen funcionando)
+  blocked-teleport-causes:
+    - COMMAND
+    - PLUGIN
+    - UNKNOWN

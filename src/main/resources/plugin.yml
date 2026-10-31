@@ -1,0 +1,25 @@
+name: OnyxDungeons
+main: com.onyx.dungeons.OnyxDungeons
+version: ${project.version}
+api-version: '1.21'
+author: Onyx
+description: Dungeons por niveles con jefes, llaves, puertas, cofres con loot aleatorio, hologramas y menus.
+softdepend: [DecentHolograms, HolographicDisplays]
+commands:
+  dungeon:
+    description: Menu y comandos de Onyx Dungeons
+    aliases: [dungeons, onyxdungeons, od]
+    usage: /dungeon [spawn|leave|help]
+permissions:
+  onyx.dungeons.admin:
+    description: Administrar dungeons, varitas, llaves y loot
+    default: op
+  onyx.dungeons.play:
+    description: Participar en dungeons
+    default: true
+  onyx.dungeons.spawn:
+    description: Usar /dungeon spawn
+    default: true
+  onyx.dungeons.bypass:
+    description: Ignorar las restricciones de las dungeons (tp, fly, comandos, entrada)
+    default: op

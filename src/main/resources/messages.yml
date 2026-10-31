@@ -1,0 +1,203 @@
+# ============================================================
+#  Onyx Dungeons - mensajes
+#  Cada mensaje tiene: title, subtitle, chat, actionbar y sound (clave de sonido de Minecraft).
+#  Deja un campo vacio ("") para no usarlo. Colores con &, salto de linea con \n
+#  Placeholders: {prefix} {dungeon} {player} {level} {levelname} {boss} {key} {items} {players} {min} {max} {time} {state}
+#  Tambien puedes editarlos en el juego: /dungeon > Mensajes (globales o por dungeon).
+# ============================================================
+
+prefix: "&5[&dOnyx&5] &r"
+
+# ---- textos de estado (se usan en hologramas y menus) ----
+state-idle:
+  chat: "&aDisponible"
+state-countdown:
+  chat: "&eIniciando..."
+state-running:
+  chat: "&cEn curso"
+state-ending:
+  chat: "&6Finalizando"
+
+# ---- plataforma de espera ----
+countdown-bar:
+  chat: "&5&l{name} &8| &fTeletransporte en &e{time} &8| &a{players}&7/&a{max} jugadores"
+zone-joined:
+  title: ""
+  subtitle: ""
+  chat: ""
+  actionbar: "&aEntraste a la plataforma &8(&f{players}&7/&f{max}&8)"
+  sound: "entity.experience_orb.pickup"
+zone-full:
+  title: ""
+  subtitle: ""
+  chat: "{prefix}&cLa plataforma esta llena ({max}/{max})."
+  actionbar: ""
+  sound: "entity.villager.no"
+countdown-start:
+  title: "&5&l{name}"
+  subtitle: "&7Quedate en la plataforma"
+  chat: "{prefix}&eLa cuenta atras ha comenzado. &7Quedate en la plataforma para entrar."
+  actionbar: ""
+  sound: "block.note_block.bell"
+countdown-tick:
+  title: "&e{time}"
+  subtitle: "&7Preparate..."
+  chat: ""
+  actionbar: ""
+  sound: "block.note_block.hat"
+countdown-cancel:
+  title: ""
+  subtitle: ""
+  chat: "{prefix}&cCuenta atras cancelada: faltan jugadores en la plataforma."
+  actionbar: ""
+  sound: "block.note_block.bass"
+
+# ---- dentro de la dungeon ----
+dungeon-start:
+  title: "&5&l{name}"
+  subtitle: "&7Que comience la aventura"
+  chat: "{prefix}&aHas entrado a la dungeon. &7Si mueres, quedas expulsado."
+  actionbar: ""
+  sound: "entity.ender_dragon.growl"
+level-reached:
+  title: "&6&lNIVEL {level}"
+  subtitle: "&7Bajaste al nivel {level}"
+  chat: ""
+  actionbar: ""
+  sound: "block.end_portal.spawn"
+level-cleared:
+  title: ""
+  subtitle: ""
+  chat: "{prefix}&aNivel {level} despejado. &7Busca la puerta y usa la llave."
+  actionbar: ""
+  sound: "entity.player.levelup"
+boss-defeated:
+  title: "&a&lJEFE DERROTADO"
+  subtitle: "&7Derrotaron a {boss}"
+  chat: ""
+  actionbar: ""
+  sound: "ui.toast.challenge_complete"
+key-received:
+  title: ""
+  subtitle: ""
+  chat: "{prefix}&eRecibiste una llave: &f{key}"
+  actionbar: "&eRecibiste: &f{key}"
+  sound: "entity.item.pickup"
+key-dropped:
+  title: ""
+  subtitle: ""
+  chat: "{prefix}&eEl jefe solto una llave."
+  actionbar: ""
+  sound: "entity.item.pickup"
+door-needs-key:
+  title: ""
+  subtitle: ""
+  chat: ""
+  actionbar: "&cNecesitas la llave para abrir esta puerta"
+  sound: "block.chest.locked"
+wrong-key:
+  title: ""
+  subtitle: ""
+  chat: ""
+  actionbar: "&cEsta no es la llave correcta"
+  sound: "block.chest.locked"
+door-opened:
+  title: "&a&lPUERTA ABIERTA"
+  subtitle: "&7Abriste la puerta"
+  chat: ""
+  actionbar: ""
+  sound: "block.iron_door.open"
+
+# ---- muerte y salida ----
+player-died:
+  title: "&c&lMORISTE"
+  subtitle: "&7Quedas expulsado de la dungeon"
+  chat: "{prefix}&cMoriste en la dungeon, quedas expulsado."
+  actionbar: ""
+  sound: "entity.wither.death"
+teammate-died:
+  title: ""
+  subtitle: ""
+  chat: "{prefix}&c{player} murio y fue expulsado."
+  actionbar: ""
+  sound: ""
+player-left:
+  title: ""
+  subtitle: ""
+  chat: "{prefix}&eAbandonaste la dungeon."
+  actionbar: ""
+  sound: ""
+
+# ---- final ----
+dungeon-complete:
+  title: "&6&l¡DUNGEON COMPLETADA!"
+  subtitle: "&7Derrotaron al ultimo jefe"
+  chat: "{prefix}&aCompletaron &f{name}&a. &7Reciban sus recompensas."
+  actionbar: ""
+  sound: "ui.toast.challenge_complete"
+rewards-received:
+  title: ""
+  subtitle: ""
+  chat: "{prefix}&6Recompensas: &f{items}"
+  actionbar: ""
+  sound: "entity.player.levelup"
+returning:
+  title: ""
+  subtitle: ""
+  chat: ""
+  actionbar: "&eVolveras al lobby en &f{time}s"
+  sound: ""
+dungeon-failed:
+  title: "&4&lDUNGEON FALLIDA"
+  subtitle: "&7Nadie logro completarla"
+  chat: "{prefix}&cLa dungeon ha terminado."
+  actionbar: ""
+  sound: "entity.wither.spawn"
+time-up:
+  title: "&c&l¡SE ACABO EL TIEMPO!"
+  subtitle: ""
+  chat: ""
+  actionbar: ""
+  sound: "entity.wither.spawn"
+
+# ---- restricciones ----
+command-blocked:
+  title: ""
+  subtitle: ""
+  chat: "{prefix}&cNo puedes usar ese comando dentro de la dungeon."
+  actionbar: ""
+  sound: "entity.villager.no"
+teleport-blocked:
+  title: ""
+  subtitle: ""
+  chat: "{prefix}&cNo puedes teletransportarte dentro de la dungeon."
+  actionbar: ""
+  sound: "entity.villager.no"
+fly-blocked:
+  title: ""
+  subtitle: ""
+  chat: "{prefix}&cNo puedes volar dentro de la dungeon."
+  actionbar: ""
+  sound: ""
+entry-blocked:
+  title: ""
+  subtitle: ""
+  chat: "{prefix}&cSolo puedes entrar a la dungeon desde la plataforma."
+  actionbar: ""
+  sound: "entity.villager.no"
+
+# ---- varios ----
+personal-chest-title:
+  chat: "&5Recompensas"
+spawn-teleported:
+  title: ""
+  subtitle: ""
+  chat: "{prefix}&aTe llevamos al lobby."
+  actionbar: ""
+  sound: "entity.enderman.teleport"
+not-in-dungeon:
+  chat: "{prefix}&cNo estas en una dungeon."
+no-permission:
+  chat: "{prefix}&cNo tienes permiso."
+prompt-cancelled:
+  chat: "{prefix}&7Cancelado."
