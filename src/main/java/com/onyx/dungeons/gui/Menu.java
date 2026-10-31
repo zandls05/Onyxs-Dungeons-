@@ -51,7 +51,7 @@ public abstract class Menu implements InventoryHolder {
 
     /** Abre otro menu en el siguiente tick (evita problemas al cambiar de inventario dentro de un clic). */
     protected void go(Menu next) {
-        Bukkit.getScheduler().runTask(plugin, next::open);
+        Bukkit.getScheduler().runTask(plugin, () -> next.open());
     }
 
     protected void set(int slot, ItemStack item, Consumer<InventoryClickEvent> action) {
