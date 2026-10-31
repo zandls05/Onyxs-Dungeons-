@@ -20,7 +20,7 @@ public class PromptManager {
     }
 
     public void ask(Player p, String question, Consumer<String> callback) {
-        Bukkit.getScheduler().runTask(plugin, p::closeInventory);
+        Bukkit.getScheduler().runTask(plugin, () -> p.closeInventory());
         pending.put(p.getUniqueId(), callback);
         p.sendMessage(Text.color(plugin.messages().prefix() + question));
         p.sendMessage(Text.color("&7Escribe &ccancelar &7para cancelar."));
